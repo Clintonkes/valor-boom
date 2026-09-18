@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: stel-backend
+    name: valor-boom-backend
     runtime: docker
     dockerfilePath: ./Dockerfile
     envVars:

@@ -19,7 +19,7 @@ from email_service import (
     contact_confirmation_html, contact_admin_notification_html,
 )
 
-app = FastAPI(title="Stel LLC API", version="1.0.0")
+app = FastAPI(title="Valor Boom Management LLC API", version="1.0.0")
 
 origins = [
     "http://localhost:5173",
@@ -27,8 +27,8 @@ origins = [
     "http://localhost:4028",
     "http://127.0.0.1:5173",
     "http://127.0.0.1:4028",
-    "https://stellawn.org",
-    "https://www.stellawn.org",
+    # GitHub Pages, until a custom domain + public/CNAME is added.
+    "https://clintonkes.github.io",
 ]
 render_url = os.getenv("RENDER_EXTERNAL_URL")
 if render_url:
@@ -58,7 +58,7 @@ def _seed_admin():
         # guessable default.
         return
 
-    admin_email = os.getenv("ADMIN_EMAIL", "stelllc1@proton.me")
+    admin_email = os.getenv("ADMIN_EMAIL", "info@valorboommanagement.com")
     db = SessionLocal()
     try:
         existing = db.query(Admin).first()
@@ -78,7 +78,7 @@ def _seed_admin():
 def _generate_reference():
     ts = str(int(time.time()))[-6:]
     rand = "".join(random.choices(string.digits, k=3))
-    return f"STEL-{ts}{rand}"
+    return f"VB-{ts}{rand}"
 
 
 # ── Public Endpoints ──────────────────────────────────────────────
@@ -106,7 +106,7 @@ def create_booking(data: BookingCreate, db: Session = Depends(get_db)):
 
     send_email(
         to_email=data.email,
-        subject=f"Your Stel LLC Service Request {reference}",
+        subject=f"Your Valor Boom Service Request {reference}",
         html_body=booking_confirmation_html(
             name=data.name,
             reference=reference,
@@ -137,7 +137,7 @@ def create_contact(data: ContactCreate, db: Session = Depends(get_db)):
 
     send_email(
         to_email=data.email,
-        subject="Thank you for contacting Stel LLC",
+        subject="Thank you for contacting Valor Boom Management",
         html_body=contact_confirmation_html(
             name=data.name,
             subject=data.subject,
@@ -145,7 +145,7 @@ def create_contact(data: ContactCreate, db: Session = Depends(get_db)):
         ),
     )
 
-    admin_email = os.getenv("ADMIN_EMAIL", "stelllc1@proton.me")
+    admin_email = os.getenv("ADMIN_EMAIL", "info@valorboommanagement.com")
     send_email(
         to_email=admin_email,
         subject=f"New Contact: {data.subject or 'No subject'}",
@@ -205,7 +205,7 @@ def update_booking_status(
 
     send_email(
         to_email=booking.email,
-        subject=f"Stel LLC Service Update: {booking.reference}",
+        subject=f"Valor Boom Service Update: {booking.reference}",
         html_body=booking_status_html(
             name=booking.name,
             reference=booking.reference,

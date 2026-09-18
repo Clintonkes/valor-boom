@@ -26,14 +26,14 @@ jobs:
       - run: npm ci
       - run: npm run build
         env:
-          NEXT_PUBLIC_API_URL: ${{ vars.NEXT_PUBLIC_API_URL }}
-          NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL }}
-          # Serving from stellawn.org at the root now, no BASE_PATH needed.
-          # (Only required for the old default github.io/stel/ project path.)
-      - run: touch out/.nojekyll
+          VITE_API_URL: ${{ vars.VITE_API_URL }}
+          # Served from /valor-boom/ (see vite.config.ts) until a custom
+          # domain + public/CNAME is added, at which point set this repo
+          # variable to "/" so assets resolve from the domain root.
+          BASE_PATH: ${{ vars.BASE_PATH }}
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: out
+          path: dist
 
   deploy:
     environment:

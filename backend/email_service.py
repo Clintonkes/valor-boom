@@ -76,12 +76,12 @@ def booking_confirmation_html(name: str, reference: str, address: str, service: 
     <body>
         <div class="container">
             <div class="header">
-                <h1>STEL LLC</h1>
+                <h1>VALOR BOOM MANAGEMENT</h1>
                 <p>PROFESSIONAL LAWN CARE</p>
             </div>
             <div class="body">
                 <h2>Thank you, {name}.</h2>
-                <p>Your service request has been received. An STEL LLC specialist will review your request and contact you within one business day.</p>
+                <p>Your service request has been received. A Valor Boom Management specialist will review your request and contact you within one business day.</p>
                 <div class="details">
                     <p><strong>Service:</strong> {service_display}</p>
                     <p><strong>Property Address:</strong> {address}</p>
@@ -89,11 +89,11 @@ def booking_confirmation_html(name: str, reference: str, address: str, service: 
                     <p><strong>Preferred Time:</strong> {time_display}</p>
                     <p><strong>Status:</strong> Pending Review</p>
                 </div>
-                <p>We appreciate your interest in STEL LLC. Our team is committed to providing reliable lawn care in Conesville, Iowa.</p>
+                <p>We appreciate your interest in VALOR BOOM MANAGEMENT. Our team is committed to providing reliable lawn care in Jupiter, FL and the surrounding area.</p>
             </div>
             <div class="ref">REF · {reference}</div>
             <div class="footer">
-                <p>STEL LLC · CONESVILLE, IOWA</p>
+                <p>VALOR BOOM MANAGEMENT LLC · JUPITER, FL</p>
                 <p>LICENSED · INSURED</p>
             </div>
         </div>
@@ -111,7 +111,7 @@ def booking_status_html(name: str, reference: str, status: str, address: str) ->
     status_messages = {
         "approved": "Your service request has been <strong>approved</strong>. Our team will contact you shortly to schedule your first visit.",
         "cancelled": "Your service request has been <strong>cancelled</strong>. If you believe this is an error, please contact us.",
-        "completed": "Your service has been <strong>completed</strong>. Thank you for choosing STEL LLC for your lawncare needs.",
+        "completed": "Your service has been <strong>completed</strong>. Thank you for choosing VALOR BOOM MANAGEMENT for your lawncare needs.",
     }
 
     status_colors = {
@@ -148,7 +148,7 @@ def booking_status_html(name: str, reference: str, status: str, address: str) ->
     <body>
         <div class="container">
             <div class="header">
-                <h1>STEL LLC</h1>
+                <h1>VALOR BOOM MANAGEMENT</h1>
                 <p>PROFESSIONAL LAWN CARE</p>
             </div>
             <div class="body">
@@ -162,7 +162,7 @@ def booking_status_html(name: str, reference: str, status: str, address: str) ->
             </div>
             <div class="ref">REF · {reference}</div>
             <div class="footer">
-                <p>STEL LLC · CONESVILLE, IOWA</p>
+                <p>VALOR BOOM MANAGEMENT LLC · JUPITER, FL</p>
                 <p>LICENSED · INSURED</p>
             </div>
         </div>
@@ -194,7 +194,7 @@ def contact_confirmation_html(name: str, subject: str, message: str) -> str:
     <body>
         <div class="container">
             <div class="header">
-                <h1>STEL LLC</h1>
+                <h1>VALOR BOOM MANAGEMENT</h1>
                 <p>PROFESSIONAL LAWN CARE</p>
             </div>
             <div class="body">
@@ -206,7 +206,7 @@ def contact_confirmation_html(name: str, subject: str, message: str) -> str:
                 </div>
             </div>
             <div class="footer">
-                <p>STEL LLC · CONESVILLE, IOWA</p>
+                <p>VALOR BOOM MANAGEMENT LLC · JUPITER, FL</p>
                 <p>LICENSED · INSURED</p>
             </div>
         </div>
@@ -238,7 +238,7 @@ def contact_admin_notification_html(name: str, email: str, subject: str, message
     <body>
         <div class="container">
             <div class="header">
-                <h1>STEL LLC</h1>
+                <h1>VALOR BOOM MANAGEMENT</h1>
                 <p>NEW CONTACT MESSAGE</p>
             </div>
             <div class="body">
@@ -250,7 +250,7 @@ def contact_admin_notification_html(name: str, email: str, subject: str, message
                 </div>
             </div>
             <div class="footer">
-                <p>STEL LLC · CONESVILLE, IOWA</p>
+                <p>VALOR BOOM MANAGEMENT LLC · JUPITER, FL</p>
             </div>
         </div>
     </body>
