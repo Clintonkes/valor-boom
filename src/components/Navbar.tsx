@@ -1,7 +1,8 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { Menu, X, Phone, Leaf } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 import { siteConfig } from '@/config/site';
+import Logo from '@/components/Logo';
 
 const navLinks = [
   { to: '/', label: 'Home' },
@@ -44,9 +45,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-lg bg-emerald-500 flex items-center justify-center transition-transform group-hover:scale-110">
-              <Leaf className="w-6 h-6 text-stone-900" />
-            </div>
+            <Logo className="w-10 h-10 transition-transform group-hover:scale-110" />
             <div className="flex flex-col leading-tight">
               <span className="text-white font-bold text-lg tracking-tight">
                 Valor Boom

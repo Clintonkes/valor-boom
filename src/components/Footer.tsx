@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-import { Leaf, Phone, Mail, MapPin, Facebook, Instagram } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Instagram } from 'lucide-react';
 import { siteConfig, services } from '@/config/site';
+import Logo from '@/components/Logo';
 
 const quickLinks = [
   { to: '/about', label: 'About' },
@@ -20,9 +21,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           <div>
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-emerald-500 flex items-center justify-center">
-                <Leaf className="w-6 h-6 text-stone-900" />
-              </div>
+              <Logo className="w-10 h-10" />
               <div className="flex flex-col leading-tight">
                 <span className="text-white font-bold text-lg tracking-tight">
                   Valor Boom
