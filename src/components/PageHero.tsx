@@ -15,15 +15,20 @@ export default function PageHero({
   image,
 }: PageHeroProps) {
   return (
-    <section
-      className="relative h-[45vh] min-h-[320px] flex items-center justify-center overflow-hidden"
-      style={{
-        backgroundImage: `linear-gradient(rgba(28, 25, 23, 0.7), rgba(28, 25, 23, 0.5)), url(${image})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
-    >
-      <div className="text-center px-4 z-10 pt-16">
+    <section className="relative h-[45vh] min-h-[320px] flex items-center justify-center overflow-hidden">
+      {/* A plain <img> (unlike a CSS background-image) can carry a fetch
+          priority hint, so this hero — the page's LCP element — starts
+          downloading as early and as urgently as possible. */}
+      <img
+        src={image}
+        alt=""
+        fetchPriority="high"
+        loading="eager"
+        decoding="async"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-stone-900/70 to-stone-900/50" />
+      <div className="relative text-center px-4 z-10 pt-16">
         <nav className="flex items-center justify-center gap-2 text-sm text-stone-300 mb-4">
           <Link to="/" className="hover:text-emerald-400 transition-colors">
             Home

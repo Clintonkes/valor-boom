@@ -58,6 +58,8 @@ export default function Gallery() {
                   <img
                     src={img.url}
                     alt={img.caption}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>

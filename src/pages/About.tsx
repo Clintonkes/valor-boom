@@ -102,6 +102,8 @@ export default function About() {
                 <img
                   src={teamImage}
                   alt="Our team at work"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-[450px] object-cover"
                 />
               </div>
@@ -217,6 +219,8 @@ export default function About() {
             <img
               src={propertyImage}
               alt="Property we maintain"
+              loading="lazy"
+              decoding="async"
               className="w-full h-[400px] object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-stone-900/80 to-transparent flex items-center">

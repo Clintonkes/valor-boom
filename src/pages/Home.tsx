@@ -37,14 +37,19 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section
-        className="relative min-h-screen flex items-center justify-center overflow-hidden"
-        style={{
-          backgroundImage: `linear-gradient(rgba(28, 25, 23, 0.55), rgba(28, 25, 23, 0.35)), url(${heroImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* A plain <img> (unlike a CSS background-image) can carry a fetch
+            priority hint, so this hero — the page's LCP element — starts
+            downloading as early and as urgently as possible. */}
+        <img
+          src={heroImage}
+          alt=""
+          fetchPriority="high"
+          loading="eager"
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-stone-900/55 to-stone-900/35" />
         <div className="absolute inset-0 bg-gradient-to-t from-stone-950/60 to-transparent" />
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 bg-emerald-500/20 backdrop-blur-sm border border-emerald-400/30 rounded-full px-5 py-2 mb-6">
@@ -138,6 +143,8 @@ export default function Home() {
                     <img
                       src={service.image}
                       alt={service.title}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-stone-900/50 to-transparent" />
@@ -170,6 +177,8 @@ export default function Home() {
           <img
             src={workerImage}
             alt="Lawn care professional"
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover"
           />
         </div>
@@ -215,6 +224,8 @@ export default function Home() {
                 <img
                   src={mowingImage}
                   alt="Professional lawn mowing"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-[400px] object-cover"
                 />
               </div>

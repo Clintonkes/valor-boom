@@ -58,6 +58,8 @@ export default function Services() {
                       <img
                         src={service.image}
                         alt={service.title}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-[350px] object-cover"
                       />
                     </div>
