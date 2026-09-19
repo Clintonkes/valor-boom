@@ -27,9 +27,10 @@ jobs:
       - run: npm run build
         env:
           VITE_API_URL: ${{ vars.VITE_API_URL }}
-          # Served from /valor-boom/ (see vite.config.ts) until a custom
-          # domain + public/CNAME is added, at which point set this repo
-          # variable to "/" so assets resolve from the domain root.
+          # Served from the valorboom.com root by default (see
+          # vite.config.ts). Only set this repo variable if deploying to
+          # the default <user>.github.io/valor-boom/ project-page URL
+          # instead (e.g. "/valor-boom/").
           BASE_PATH: ${{ vars.BASE_PATH }}
       - uses: actions/upload-pages-artifact@v3
         with:

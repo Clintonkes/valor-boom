@@ -5,12 +5,12 @@
     <title>Valor Boom Management LLC</title>
     <script>
       // GitHub Pages has no server-side rewrites, so a direct link or a
-      // refresh on a client-routed path (e.g. /valor-boom/about) 404s here
-      // instead of reaching index.html. Encode the real path into a query
-      // string and redirect to the app root, where the inline script in
-      // index.html decodes it back before React Router mounts.
+      // refresh on a client-routed path (e.g. /about) 404s here instead of
+      // reaching index.html. Encode the real path into a query string and
+      // redirect to the app root, where the inline script in index.html
+      // decodes it back before React Router mounts.
       // See https://github.com/rafgraph/spa-github-pages
-      var pathSegmentsToKeep = 1; // "/valor-boom" — bump to 0 on a custom domain root
+      var pathSegmentsToKeep = 0; // served from the valorboom.com root
       var l = window.location;
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +

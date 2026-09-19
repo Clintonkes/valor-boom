@@ -27,7 +27,9 @@ origins = [
     "http://localhost:4028",
     "http://127.0.0.1:5173",
     "http://127.0.0.1:4028",
-    # GitHub Pages, until a custom domain + public/CNAME is added.
+    "https://valorboom.com",
+    "https://www.valorboom.com",
+    # GitHub Pages default URL, kept as a fallback while DNS propagates.
     "https://clintonkes.github.io",
 ]
 render_url = os.getenv("RENDER_EXTERNAL_URL")
