@@ -3,6 +3,10 @@ name: Deploy Frontend to GitHub Pages
 on:
   push:
     branches: [main]
+  # Lets you force a rebuild from the Actions tab without a new commit —
+  # e.g. after changing the VITE_API_URL/BASE_PATH repo variables, which
+  # only take effect on the next build.
+  workflow_dispatch:
 
 permissions:
   contents: read
