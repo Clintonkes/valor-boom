@@ -1,4 +1,4 @@
-import { useState, FormEvent } from 'react';
+import { useState, FormEvent, useEffect } from 'react';
 import {
   ArrowRight,
   CheckCircle2,
@@ -56,6 +56,12 @@ export default function Quote() {
     'idle'
   );
   const [errorMsg, setErrorMsg] = useState('');
+
+  useEffect(() => {
+    if (status === 'success') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [status]);
 
   const handleChange = (
     e: React.ChangeEvent<
